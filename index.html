@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aguafina+Script&family=Ballet:opsz@16..72&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fleur+De+Leah&family=Great+Vibes&family=Kaushan+Script&family=Marck+Script&family=Monsieur+La+Doulaise&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        html{
+        }
+        body{
+            background-color:  #F8F4F8;
+            margin: 0px;
+            padding: 0px;
+            font-family: "DM Sans", sans-serif;
+            overflow-x: hidden;
+            margin-bottom: 50px;
+        }
+        .pg{
+            height: auto;
+            width: 99.50%;
+            border-radius: 25px;
+        }
+        .products {
+            min-height: 100svh;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .about{
+            height: auto;
+            min-height: 90svh;
+        }
+        .gallary{
+            height: auto;
+            min-height: 90svh;
+        }
+        .reviews{
+            height: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .heading{
+            width: max-content;
+            height: 4rem;
+            display: flex;
+            margin-inline: auto;
+            justify-content: center;
+            align-items: center;
+            font-size: clamp(2rem, 5vw, 5rem);
+            animation: azoom linear forwards;
+            animation-timeline: view();
+            animation-range: entry 30% cover 30%;
+            animation-fill-mode: both;
+            overflow: hidden;
+            padding: 0px;
+        }
+        @keyframes azoom{
+            from{
+                transform: scale(2);
+                opacity: 0;
+            }
+            to{
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        .hbox{
+            border-radius: 25px;
+            position: relative;
+            height: 100%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            place-items: center;
+            min-height: 100svh;
+        }
+        .hbox img{
+            height: clamp(15rem, 30vw, 30rem);
+            width: 100%;
+            object-fit: cover;
+        }
+        .imgd{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80%;
+            width: 100%;
+            border-radius: 500px;
+            background-color: #F3CEFF;
+            
+        }
+        h1 i{
+            font-family: "Fleur De Leah", cursive;
+            font-size: clamp(4rem, 12vw, 8rem);
+
+            
+        }
+        .htext{
+            border-radius: 25px;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            white-space: nowrap;
+            text-align: center;
+            padding: 0px;
+        }
+        .htext h1{
+            font-size: clamp(4rem, 10vw, 10rem);
+            line-height: clamp(3rem, 9vw, 9rem);
+            text-align: center;
+            margin: 0px 0px 20px 0px;
+            padding: 0px;
+        }
+        .htext p{
+            font-size: clamp(1.2rem, 1.8vw, 1.8rem);
+            padding: 0px;
+            
+            margin: 20px;
+        }
+        
+        nav{
+            width: 99.5%;
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: antiquewhite;
+            border-radius: 25px;
+            position: fixed;
+            top: 0px;
+            z-index: 3;
+            
+            
+        }
+        .navimg{
+            height: 25px;
+            width: 25px;
+        }
+        nav a{
+            color: black;
+            font-size: clamp(0.7rem, 1.4vw, 1.4rem);
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        nav a:hover{
+            color: purple;
+        }
+        .cta{
+            color: black;
+            font-size: clamp(1.5rem, 2.2vw, 2.2rem);
+            margin: 0px;
+            padding: 0px;
+            height: clamp(2rem, 3vw, 3rem);
+            text-decoration: none;
+            width: clamp(6rem, 12vw, 12rem);
+            border-radius: 25px;
+            background-color: #c171fa;
+            color: white;
+            font-family: "Fleur De Leah", cursive;
+            font-weight: 800;
+        }
+        .cta:hover{
+            background-color: #F3CEFF;
+            color: purple;
+            border-radius: 0px;
+        }
+        .nlogo{
+            height: clamp(2.5rem, 4vw, 4rem);
+            width: clamp(2.5rem, 4vw, 4rem);
+            border-radius: 25px;
+        }
+        
+        .pbox{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 10px;
+            height: 90%;
+            width: 100%;
+            
+        }
+        .pcard{
+            padding-bottom: 20px;
+            height: 80%;
+            width: 100%;
+            margin: 30px 0px 0px 0px;
+            justify-self: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            
+        }
+        .pcard img{
+            
+            height: 300px;
+            width: 300px;
+            border-radius: 175px;
+            border: 1px solid black;
+            transition: border-radius 0.5s linear, transform 0.5s linear;
+        }
+        .pcard img:hover{
+            border-radius: 10px;
+            transform: scale(1.1);
+        }
+        .pcard div{
+            margin-top: 10%;
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .pcard div h1{
+            margin: 10px;
+            padding: 0px;
+            font-size: clamp(2rem, 3vw, 3rem);
+        }
+        .pcard div p{
+            margin: 0px;
+            padding-bottom: 10px;
+            font-size: clamp(1rem, 2vw, 2rem);
+        }
+        .pcard div button{
+            margin: 0px;
+            padding: 0px;
+            width: 5rem;
+            background-color: #E7C6FF;
+            color: rgb(0, 0, 3);
+            font-size: clamp(1rem, 1.5vw, 1.5rem);
+            border-radius: 10px 0px 10px 0px;
+        }
+        .pcard div button:hover{
+            color: purple;
+            border-radius: 0px 10px 0px 10px;
+            background-color: white;
+        }
+        .about{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .abox{
+            display: grid;
+            place-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            justify-self: center;
+            gap: 15px;
+            margin: 0px 30px;
+        }
+        .abox img{
+            height: clamp(20rem, 35vw, 55rem);
+            width: 100%;
+            object-fit: cover;
+            border: 1px solid black;
+            border-radius: 0px 100px 0px 100px;
+        }
+        .atext{
+            height: clamp(20rem, 35vw, 55rem);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 1px solid black;
+            border-radius: 50px 0px 100px 0px;
+            margin-bottom: 0px;
+            padding: 0px;
+        }
+        .atext h1{
+            font-size: clamp(2rem, 7vw, 9rem);
+            margin: 0px;
+            padding-bottom: 0px;
+            line-height: clamp(2rem, 5vw, 5rem);
+            text-align: center;
+        }
+        .atext p{
+            font-size: clamp(1rem, 1.5vw, 2rem);
+            margin: 20px;
+            padding: 0px;
+            text-align: justify;
+            hyphens: auto;
+        }
+        @media only screen and (max-width: 768px){
+            nav{
+                top: auto;
+                bottom: 0px;
+            }
+            .abox img{
+                order: 2;
+            }
+            .atext{
+                order: 1;
+            }
+            .abox{
+                margin: 10px;
+            }
+        }
+        .gbox{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .gwrap{
+            column-width: 300px;
+            padding: 20px;
+            height: 90%;
+            width: 90%;
+            columns: 3;
+            line-height: 50px;
+            gap: 30px
+            
+        }
+        .gwrap img{
+            width: 100%;
+            border-radius: 25px;
+            border: 2px solid black;
+            object-fit: cover;
+        }
+        .gwrap img:hover{
+            rotate: 3deg;
+            box-shadow: 0 4px 10px rgba(0, 0, 0.6, 0.6);
+        }
+       
+        
+        @media only screen and (max-width: 900px){
+            .gwrap{
+                columns: 2;
+            }
+        }
+        @media only screen and (max-width: 768px){
+            nav{
+                top: auto;
+                bottom: 0px;
+                height: 50px;
+            }
+            .hbox{
+                grid-template-columns: 1fr;
+            }
+            .hbox img{
+                order: 1;
+            }
+            .htext{
+                order: 2;
+            }
+            .gwrap{
+                columns: 1;
+            }
+            
+        }
+        .rbox{
+            margin: 0px 0px;
+            height: auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .rwrap{
+            height: 100%;
+            width: 90%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            margin: 0px 20px;
+            gap: 50px;
+            margin: 20px;
+            place-items: center;
+            
+        }
+        .rcard{
+            height: 100%;
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: 1fr;
+            place-items: center;
+            border-radius: 100px;
+            overflow: hidden;
+        }
+        .rcard div{
+            height: 250px;
+            width: 100%;
+            overflow: hidden;
+            border: 1px solid black;
+            object-fit: cover;
+        }
+        .im{
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .rcard h1{
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+        }
+        .rcard p{
+            margin-top: 0px;
+            padding-bottom: 0px;
+            text-align: center;
+            padding: 20px;
+        }
+        .rcard h6{
+            margin-top: 0px;
+            padding-top: 0px;
+            font-style: italic;
+        }
+        .cbox{
+            height: auto;
+            width: 100%;
+        }
+        .cwrap{
+            height: auto;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .ctext{
+            text-align: center;
+            line-height: 20px;
+            font-size: clamp(0.7rem, 1vw, 1rem);
+            border: 1px solid purple;
+            border-radius: 25px;
+            width: clamp(10rem, 20vw, 20rem);
+        }
+        .acc{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .acc img{
+            height: 30px;
+            width: 30px;
+            
+            
+        }
+        #map img{
+            height: clamp(5rem, 20vw, 20rem);
+            width: clamp(5rem, 20vw, 20rem);
+            border: 1px solid purple;
+            border-radius: 25px;
+        }
+        #brand img{
+            height: clamp(5rem, 20vw, 20rem);
+            width: clamp(5rem, 20vw, 20rem);
+            border: 1px solid purple;
+            border-radius: 25px;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <img class="nlogo"src="logo.jpg">
+        <a href="#hero"><img class="navimg"src="homew.jpg">Home</a>
+        <a href="#products"><img class="navimg"src="products.jpg">Products</a>
+        <a href="#gallary"><img class="navimg"src="gallary.jpg">Gallary</a>
+        <a href="tel:7983427187"><button class="cta">Contact</button></a>
+    </nav>
+    <div class="pg hero" id="hero">
+        <div class="hbox">
+            <div class="htext">
+                <h1>The Badal<br>Homestay</h1>
+                <p>A peak stay where cabins float<br>in the clouds</p>
+                <a href="tel:7983427187"><button class="cta">Contact</button></a>
+            </div>
+            <div class="imgd"><img src="homestay-removebg-preview.png" alt=""></div>
+        </div>
+    </div>
+    <h1 class="heading" id="productsi">Products</h1>
+    <div class="pg products" id="products">
+    <div class="pbox">
+            <div class="pcard">
+                <img src="home1.jpg">
+                <div>
+                    <h1>Imnis Cabin</h1>
+                    <p>Classic and Vintage</p>
+                    <button>View</button>
+                </div>
+            </div>
+            <div class="pcard">
+                <img src="home2.jpg">
+                <div>
+                    <h1>Hide Cabin</h1>
+                    <p>Quite and Peaceful</p>
+                    <button>View</button>
+                </div>
+            </div>
+            <div class="pcard">
+                <img src="home3.jpg">
+                <div>
+                    <h1>Hill Cabin</h1>
+                    <p>Forest and Pool</p>
+                    <button>View</button>
+                </div>
+            </div>
+        </div></div>
+    <h1 class="heading" id="abouti">About Us</h1>
+    <div class="pg about" id="about">
+        <div class="abox">
+            <div class="atext">
+                <h1>Badal Homestay</h1>
+                <p>Badal Homestay, established in 1999, is a cherished retreat known for its warm hospitality and homely comfort. Renowned for peaceful stays, personal care, and heartfelt service, we have been welcoming guests like family for generations. At Badal Homestay, comfort meets care to create memories worth returning to.</p>
+                <a href="tel:7983427187"><button class="cta">Contact</button></a>
+            </div>
+            <div class="imgd">
+                <img src="homess.jpg" alt="">
+            </div>
+        </div>
+        
+    </div>
+    <h1 class="heading" id="gallaryi">Gallary</h1>
+    <div class="pg gallary" id="gallary">
+        <div class="gbox">
+            <div class="gwrap">
+                <img src="h1.jpg" alt="">
+                <img src="h2.jpg" alt="">
+                <img src="h3.jpg" alt="">
+                <img src="h4.jpg" alt="">
+                <img src="h5.jpg" alt="">
+                <img src="h6.jpg" alt="">
+                <img src="h7.jpg" alt="">
+                <img src="h8.jpg" alt="">
+                <img src="h9.jpg" alt="">
+                <img src="h10.jpg" alt="">
+                <img src="h11.jpg" alt="">
+                <img src="h12.jpg" alt="">
+                <img src="h13.jpg" alt="">
+
+        </div>
+    </div>
+    <h1 class="heading" id="reviewsi">Reviews</h1>
+    <div class="pg reviews" id="reviews">
+    <div class="rbox">
+            <div class="rwrap">
+                <div class="rcard">
+                    <div><img class="im" src="p1.jpg" alt=""></div>
+                    <h1>June Pale</h1>
+                    <p>The staff showed great professionalism and attention to detail. The hygiene standards were excellent, and the service delivery was timely and well‑managed. Overall, a very pleasant experience.</p>
+                    <h6>1 Year Ago</h6>
+                </div>
+                <div class="rcard">
+                    <div><img class="im" src="p3.jpg" alt=""></div>
+                    <h1>Juan Sega</h1>
+                    <p>The staff was cooperative, polite, and highly professional. Hygiene was well maintained, and the quality of service delivery exceeded expectations. Very reliable and trustworthy.</p>
+                    <h6>2 Days Ago</h6>
+                </div>
+                <div class="rcard">
+                    <div><img class="im" src="p2.jpg" alt=""></div>
+                    <h1>Deik Saiell</h1>
+                    <p>From the moment we arrived, the staff made us feel comfortable and well taken care of. Cleanliness and hygiene were clearly maintained, and the service was handled efficiently and professionally.</p>
+                    <h6>6 Months Ago</h6>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <h1 class="heading" id="contacti">Contact</h1>
+     <div class="pg contact" id="contact">
+        <div class="cbox">
+            <div class="cwrap">
+                <a href="#hero" id="brand" style="grid-area: box-1"><img class="cimg" src="logo.jpg" alt=""></a>
+                    <div class="ctext" style="grid-area: box-2">
+                        <h1>Address</h1>
+                        <h3>Landour</h3>
+                        <h3>Mussoorie</h3>
+                        <h3>Uttarakhand-248179</h3>
+                        <h3>Contact: <a href="tel:7983427187">7983427187</a></h3>
+                    
+                    <div class="acc">
+                        <a href="https://www.facebook.com/"><img src="face.jpg" alt=""></a>
+                        <a href="https://www.instagram.com/"><img src="insta.jpg"></a>
+                        <a href="https://x.com/"><img src="x.jpg"></a>
+                    </div>
+                    </div>
+
+                <a title="Google Map!" href="https://maps.app.goo.gl/b2ubf7Cp66K5RwaX6" id="map" style="grid-area: box-3"><img class="cimg" src="map.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
